@@ -6,7 +6,7 @@ package binarytree;
 import java.util.ArrayList;
 
 /**
- * @author MAAG
+ * @author Herber Sebastián Silva Muñoz
  *
  */
 public class DictTraversal implements ITreeTraversal<String> {

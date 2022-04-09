@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package binarytree;
 
 import java.util.ArrayList;
@@ -11,7 +6,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Sebastián
+ * @author Herber Sebastián Silva Muñoz
  */
 public class main {
 
@@ -19,7 +14,6 @@ public class main {
         BinarySearchTree<String, String> english = new BinarySearchTree<>();
         BinarySearchTree<String, String> french = new BinarySearchTree<>();
         ArrayList<String[]> lectura = Lector.leerArchivo("F:\\Programacion\\BinaryTree\\src\\res\\diccionario.txt");
-        System.out.println(lectura);
         DictTraversal dictEng = new DictTraversal();
         DictTraversal dictFren = new DictTraversal();
         for (String[] array : lectura) {
@@ -63,7 +57,18 @@ public class main {
                     System.out.println(traducir(french, temp));
                 }
             } else if (opcion == 4) {
-
+                ArrayList<String> oraciones = Lector.leerArchivoTraduc("F:\\Programacion\\BinaryTree\\src\\res\\texto.txt");
+                for (String oracion : oraciones) {
+                    if (detectar(english, french, oracion) == null) {
+                        System.out.println(traducir(french, oracion));
+                    } else if (detectar(english, french, oracion).equals("Ingles")) {
+                        System.out.println("\nLa oracion esta en Ingles:");
+                        System.out.println(traducir(english, oracion));
+                    } else if (detectar(english, french, oracion).equals("Frances")) {
+                        System.out.println("\nLa oracion esta en Frances:");
+                        System.out.println(traducir(french, oracion));
+                    }
+                }
             } else if (opcion == 5) {
                 temp = "";
                 System.out.println("Ingrese la palabra en espanol");
@@ -82,20 +87,20 @@ public class main {
                     System.out.println("No se encontro la palabra a modificar");
                 } else if (detectar(english, french, temp).equals("Ingles")) {
                     System.out.println("\nIngrese la nueva palabra en idioma ingles");
-                    temp = temp+","+scanstring.nextLine();
+                    temp = temp + "," + scanstring.nextLine();
                     System.out.println("\nIngrese la nueva palabra en idioma espanol");
-                    temp = temp+","+scanstring.nextLine();
+                    temp = temp + "," + scanstring.nextLine();
                     String[] temp2 = temp.split(",");
                     modificar(english, temp2[0], temp2[1], temp2[2]);
                 } else if (detectar(english, french, temp).equals("Frances")) {
                     System.out.println("\nIngrese la nueva palabra en idioma frances");
-                    temp = temp+","+scanstring.nextLine();
+                    temp = temp + "," + scanstring.nextLine();
                     System.out.println("\nIngrese la nueva palabra en idioma espanol");
-                    temp = temp+","+scanstring.nextLine();
+                    temp = temp + "," + scanstring.nextLine();
                     String[] temp2 = temp.split(",");
                     modificar(french, temp2[0], temp2[1], temp2[2]);
                 }
-            } else if(opcion == 7){
+            } else if (opcion == 7) {
                 System.out.println("\nIngrese la palabra que desea elimiar en idioma extranjero");
                 temp = scanstring.nextLine();
                 if (detectar(english, french, temp) == null) {

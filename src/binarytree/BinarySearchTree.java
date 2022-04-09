@@ -3,7 +3,9 @@ package binarytree;
 import java.util.ArrayList;
 
 /**
- * @author MAAG
+ * @author Herber Sebastián Silva Muñoz
+ * @param <K>
+ * @param <V>
  *
  */
 public class BinarySearchTree<K extends Comparable<K>, V extends Comparable<V>> implements IBinarySearchTree<K, V> {

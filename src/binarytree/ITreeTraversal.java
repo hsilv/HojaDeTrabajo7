@@ -4,7 +4,7 @@
 package binarytree;
 
 /**
- * @author MAAG
+ * @author Herber Sebastián Silva Muñoz
  *
  */
 public interface ITreeTraversal<K> {
