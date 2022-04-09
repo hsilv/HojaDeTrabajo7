@@ -14,6 +14,7 @@ import java.util.Scanner;
  * @author Sebastián
  */
 public class Lector {
+
     public static ArrayList<String[]> leerArchivo(String path) {
         ArrayList<String[]> array = new ArrayList<>();
         String temp;
@@ -28,5 +29,21 @@ public class Lector {
             e.printStackTrace();
         }
         return array;
+    }
+
+    public static ArrayList<String> leerArchivoTraduc(String path) {
+        {
+            ArrayList<String> array = new ArrayList<>();
+            try {
+                File doc = new File(path);
+                Scanner obj = new Scanner(doc);
+                while (obj.hasNextLine()) {
+                    array.add(obj.nextLine().trim());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return array;
+        }
     }
 }
