@@ -5,6 +5,7 @@
  */
 package binarytree;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
@@ -13,11 +14,15 @@ import java.util.Comparator;
  */
 public class main {
     public static void main(String[] args) {
-        BinarySearchTree<String, String> arbol = new BinarySearchTree<>();
-        arbol.insert("Hola", "Hello");
-        arbol.insert("Gato", "Cat");
-        arbol.insert("Xilofono", "Xilophone");
-        arbol.insert("Parque", "Park");
-        System.out.println(arbol);
+        BinarySearchTree<String, String> english = new BinarySearchTree<>();
+        BinarySearchTree<String, String> french = new BinarySearchTree<>();
+        ArrayList<String[]> lectura = Lector.leerArchivo("F:\\Programacion\\BinaryTree\\src\\res\\diccionario.txt");
+        System.out.println(lectura);
+        for(String[] array: lectura){
+            english.insert(array[0].trim(), array[1].trim());
+            french.insert(array[2].trim(), array[1].trim());
+        }
+        System.out.println("----------BIENVENIDO----------");
     }
+    
 }
