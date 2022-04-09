@@ -7,8 +7,8 @@ package binarytree;
  * @author MAAG
  *
  */
-public interface ITreeTraversal<V> {
+public interface ITreeTraversal<K> {
 
-	void Walk(V value);
+	void Walk(K Key);
 	
 }

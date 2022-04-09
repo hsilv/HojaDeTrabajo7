@@ -3,7 +3,7 @@ dog,perro,chien
 homework,tarea,devoirs
 woman,mujer,femme
 town,pueblo,ville
-yes,si,Oui
+yes,si,oui
 the,la,la
 asked,pregunto,demandee
 me,me,moi
